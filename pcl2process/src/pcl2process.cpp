@@ -28,20 +28,20 @@
 tf2_ros::Buffer tfBuffer;
 ros::Publisher pcl_publisher;
 
-Eigen::Matrix4f createTransformationMatrix(float x, float y, float z, float w, float qx, float qy, float qz) {
-  // Create a rotation matrix from the quaternion
-  Eigen::Quaternion<float> q(w, qx, qy, qz);
-  Eigen::Matrix3f rotationMatrix = q.toRotationMatrix();
-
-  // Create a translation matrix
-  Eigen::Matrix4f translationMatrix = Eigen::Matrix4f::Identity();
-  translationMatrix(0, 3) = x;
-  translationMatrix(1, 3) = y;
-  translationMatrix(2, 3) = z;
-
-  // Combine rotation and translation
-  return rotationMatrix * translationMatrix;
-}
+//Eigen::Matrix4f createTransformationMatrix(float x, float y, float z, float w, float qx, float qy, float qz) {
+//  // Create a rotation matrix from the quaternion
+//  Eigen::Quaternion<float> q(w, qx, qy, qz);
+//  Eigen::Matrix3f rotationMatrix = q.toRotationMatrix();
+//
+//  // Create a translation matrix
+//  Eigen::Matrix4f translationMatrix = Eigen::Matrix4f::Identity();
+//  translationMatrix(0, 3) = x;
+//  translationMatrix(1, 3) = y;
+//  translationMatrix(2, 3) = z;
+//
+//  // Combine rotation and translation
+//  return rotationMatrix * translationMatrix;
+//}
 
 inline float float_abs(float x)
 {
